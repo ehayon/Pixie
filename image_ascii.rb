@@ -8,10 +8,6 @@ class Image
 	self.image = Magick::Image::read(img).first
   end
 
-  def to_grayscale
-	self.image = self.image.quantize(12)
-  end
-
   def to_ascii
 	chars = %w(;; $$ @@ ,, ^^ __ %% ** (* *) ==)
 	chars[11] = "  "
