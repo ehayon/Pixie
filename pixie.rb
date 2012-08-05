@@ -9,16 +9,17 @@ class Image
   end
 
   def to_ascii
-	chars = %w(;; $$ @@ ,, ^^ __ %% ** (* *) ==)
-	chars[11] = "  "
+	#chars = (0..11).map { rand(33..126).chr } # playing around with a random ascii character set
+	chars = %w(! @ # $ % ^ & * : ' ; .)
 	p = []
-	scaled = self.image.scale(100,100).quantize(12)
+	scaled = self.image.scale(100,100).quantize(chars.length)
 	scaled.each_pixel { |pixel| p << pixel }
 	p = p.uniq.sort.map(&:intensity)
+	chars[p.length-1] = " "
 	ascii = []
 	#binding.pry
 	scaled.each_pixel do |pixel, c, r|
-	  print chars[p.index(pixel.intensity)]
+	  print chars[p.index(pixel.intensity)] + " "
 	  puts if c == scaled.columns - 1
 	  ascii << chars[p.index(pixel.intensity)]
 	  ascii << "\n" if c == scaled.columns - 1
