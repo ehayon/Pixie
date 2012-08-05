@@ -2,6 +2,7 @@
 
 depends on ImageMagick, RMagick
 
+TODO: Remove ImageMagick/Rmagick dependency
 
 ![Screenshot](http://f.cl.ly/items/2Z2P3O3I012k1Z033I3N/image.png)
 
