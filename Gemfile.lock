@@ -3,11 +3,13 @@ GEM
   specs:
     coderay (1.0.7)
     method_source (0.8)
+    pkg-config (1.5.5)
     pry (0.9.10)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
-    rmagick (2.13.1)
+    rmagick (5.3.0)
+      pkg-config (~> 1.4)
     slop (3.3.2)
 
 PLATFORMS
